@@ -63,6 +63,52 @@ class PrayerrequestController extends Controller
 
     }
 
+    public function edit( $id){
+
+        $prayerrequest=Prayerrequest::find($id);
+
+
+
+        if ($prayerrequest->user->id == Auth::id()){
+            return view('Prayerrequest.edit',['prayerrequest'=>$prayerrequest]);
+        } else {
+            return redirect()->route('request.show',$id)->with('error','You are not authorized to edit someone else\'s request');
+        }
+
+    }
+
+    public function change(Request $request, $id){
+
+        $this->validate($request,[
+            'title'=>'required|string',
+            'details'=>'required|max:1000',
+            'enddate'=>'nullable|date',
+        ]);
+
+        $prayerrequest=Prayerrequest::find($id);
+
+        $prayerrequest->title=$request->title;
+        $prayerrequest->details=$request->details;
+
+        if (!empty($request->enddate)){
+            $enddate=new \DateTime($request->enddate);
+            
+            $prayerrequest->enddate=$enddate->format('Y-m-d');
+        }
+
+        if ($request->private){
+            $prayerrequest->private=true;
+        } else {
+            $prayerrequest->private=false;
+        }
+
+        if ($request->answered){
+            $prayerrequest->answered=true;
+        } else {
+            $prayerrequest->answered=false;
+        }
+    }
+
     public function show($id){
 
         $user=Auth::user();
@@ -78,6 +124,23 @@ class PrayerrequestController extends Controller
         } else {
             return redirect()->route('request.index');
         }
+
+    }
+
+    public function pray(Request $request, $id){
+
+        $user=Auth::user();
+
+        $prayerrequest = Prayerrequest::find($id);
+
+        $prayerpartner = new Prayerpartner();
+
+        $prayerpartner->user_id=$user->id;
+        $prayerpartner->prayerrequest_id=$prayerrequest->id;
+
+        $prayerpartner->save();
+
+        return redirect()->back();
 
     }
 

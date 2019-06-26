@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header"><h3>Change Prayer Request</h3></div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('Prayerrequests.update',$prayerrequest) }}">
+                        <form method="post" action="{{ route('request.change',$prayerrequest) }}">
 
                             @csrf
                             <div class="form-group row">
@@ -58,10 +58,22 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="answered" class="col-md-4 col-form-label text-md-right">Answered: </label>
+                                <div class="col-md-6">
+                                    <input id="answered" type="checkbox" class="form-control @error('answered') is-invalid @enderror"
+                                           name="answered" autocomplete="answered" autofocus @if($prayerrequest->answered) checked @endif >
+                                    @error('answered')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Save') }}
+                                        {{ __('Save Changes') }}
                                     </button>
                                 </div>
                             </div>

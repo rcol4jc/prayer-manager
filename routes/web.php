@@ -20,7 +20,7 @@ Route::get('/request', 'PrayerrequestController@index')->name('request.index');
 Route::get('/request/new', 'PrayerrequestController@new');
 Route::post('/request/save', 'PrayerrequestController@save')->name('request.save');
 Route::get('/request/{id}/edit', 'PrayerrequestController@edit')->name('request.edit');
-Route::post('/request/{id}/save', 'PrayerrequestController@change');
+Route::post('/request/{id}/save', 'PrayerrequestController@change')->name('request.change');
 Route::get('/request/{id}', 'PrayerrequestController@show')->name('request.show');
 Route::post('/request/{id}/pray', 'PrayerrequestController@pray')->name('request.pray');
 Route::post('/response/{id}/edit', 'PrayerresponseController@edit')->name('response.edit');

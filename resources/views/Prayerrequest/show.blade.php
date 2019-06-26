@@ -5,6 +5,11 @@
     <div class="row mt-5 justify-content-center">
         <div class="col-md-8 col-sm-12 mx-auto">
             <div class="card">
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="card-header"><h2>{{ $prayerrequest->title }}</h2></div>
                 <div class="card-body">
                     <p class="card-text" style="font-size:1.5rem;">{{ $prayerrequest->details }}</p>
@@ -15,6 +20,7 @@
                         @if(count($prayerrequest->prayerpartners->where('user_id',$user->id)->where('prayerrequest_id',$prayerrequest->id))==0)
 
                             <form class="d-inline" action="{{route('request.pray',$prayerrequest->id)}}" method="post">
+                                @csrf
                                 <input class="btn btn-primary" type="submit" value="Pray"/>
                             </form>
 
@@ -41,6 +47,7 @@
                     <div class="card mt-3" style="padding: 1rem;">
                         <h4 class="card-title">Responses: </h4>
                         @foreach($prayerrequest->prayerresponses as $prayerresponse)
+                            <p class="small">{{ $prayerresponse->user->name }} wrote: </p>
                             <p style="font-size: 1.2rem;" class="card-text mt-1">{{ $prayerresponse->details }}
                                 @if($prayerresponse->user_id==$user->id)
                                     <a href="{{ route('response.edit',$prayerresponse->id) }}">Edit</a>
