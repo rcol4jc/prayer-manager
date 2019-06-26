@@ -13,30 +13,37 @@
                 <div class="card-header"><h2>{{ $prayerrequest->title }}</h2></div>
                 <div class="card-body">
                     <p class="card-text" style="font-size:1.5rem;">{{ $prayerrequest->details }}</p>
-                    <div class="text-right">
-                        <a class="btn btn-primary" href="{{ route('request.showPartners', $prayerrequest->id) }}">
-                            People Praying <span class="badge badge-dark">{{ count($prayerrequest->prayerpartners) }}</span></a>
+                    <div class="text-lg-right text-md-center">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4 col-xl-4">
+                            <a class="btn btn-primary btn-block"
+                               href="{{ route('request.showPartners', $prayerrequest->id) }}">
+                                People Praying <span
+                                        class="badge badge-dark">{{ count($prayerrequest->prayerpartners) }}</span></a>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xl-4">
+                            @if(count($prayerrequest->prayerpartners->where('user_id',$user->id)->where('prayerrequest_id',$prayerrequest->id))==0)
 
-                        @if(count($prayerrequest->prayerpartners->where('user_id',$user->id)->where('prayerrequest_id',$prayerrequest->id))==0)
+                                <form class="d-inline" action="{{route('request.pray',$prayerrequest->id)}}"
+                                      method="post">
+                                    @csrf
+                                    <input class="btn btn-primary btn-block" type="submit" value="Pray"/>
+                                </form>
 
-                            <form class="d-inline" action="{{route('request.pray',$prayerrequest->id)}}" method="post">
-                                @csrf
-                                <input class="btn btn-primary" type="submit" value="Pray"/>
-                            </form>
-
-                        @else
-                                <button disabled class="btn btn-secondary">You are already praying</button>
+                            @else
+                                <button disabled class="btn btn-secondary btn-block">You are already praying</button>
                             @endif
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-xl-4">
 
+                            @if($prayerrequest->user_id == $user->id)
+                                <a class="btn btn-primary btn-block"
+                                   href="{{ route('request.edit', $prayerrequest->id) }}">Edit</a>
+                            </div>
+                        </div>
+                        @endif
 
-
-
-                    @if($prayerrequest->user_id == $user->id)
-                            <a class="btn btn-primary" href="{{ route('request.edit', $prayerrequest->id) }}">Edit</a>
-                    @endif
                     </div>
-
-
 
                 </div>
 
@@ -66,7 +73,8 @@
                         @csrf
                         <div class="form-group">
                             <label for="details">Response: </label>
-                            <textarea name="details" id="details" class="form-control @error('details') is-invalid @enderror">{{ old('details') }}</textarea>
+                            <textarea name="details" id="details"
+                                      class="form-control @error('details') is-invalid @enderror">{{ old('details') }}</textarea>
                             @error('details')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

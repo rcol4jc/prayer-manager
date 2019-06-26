@@ -82,7 +82,7 @@ class PrayerrequestController extends Controller
         $this->validate($request,[
             'title'=>'required|string',
             'details'=>'required|max:1000',
-            'enddate'=>'nullable|date',
+            'enddate'=>'nullable|after_or_equal:today',
         ]);
 
         $prayerrequest=Prayerrequest::find($id);
@@ -92,7 +92,7 @@ class PrayerrequestController extends Controller
 
         if (!empty($request->enddate)){
             $enddate=new \DateTime($request->enddate);
-            
+
             $prayerrequest->enddate=$enddate->format('Y-m-d');
         }
 
@@ -107,6 +107,10 @@ class PrayerrequestController extends Controller
         } else {
             $prayerrequest->answered=false;
         }
+
+        $prayerrequest->save();
+
+        return redirect()->route('request.show',$id);
     }
 
     public function show($id){
