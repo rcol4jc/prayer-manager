@@ -15,7 +15,11 @@ class PrayerrequestController extends Controller
     }
 
     public function index(){
-        //
+
+        $prayerrequests = Prayerrequest::where('user_id',Auth::id())->where('private',false);
+        $user= Auth::user();
+
+        return view('Prayerrequest.index', ['prayerrequests'=>$prayerrequests, 'user'=>$user]);
     }
 
     public function new(){
