@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46ae28ab-8948-4877-9f7d-0ff7bdaa6d07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PrayerrequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PrayerrequestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Prayerrequest/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Prayerrequest/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +32,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="22" column="92" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
+            <state relative-caret-position="189">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -50,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrayerrequestController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="645">
-              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+              <caret line="152" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -71,12 +81,12 @@
         <entry file="file://$PROJECT_DIR$/resources/views/Prayerrequest/new.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-543">
-              <caret line="19" column="49" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="20" selection-end-column="43" />
+              <caret line="19" column="49" selection-start-line="18" selection-start-column="32" selection-end-line="20" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Prayerrequest/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
@@ -86,15 +96,6 @@
                 <element signature="e#1445#1467#0#HTML" expanded="true" />
                 <element signature="e#1649#1675#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_23_222559_change_content_col_on_prayerresponses_to_details.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -148,10 +149,11 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_06_25_025022_create_prayerpartners_table.php" />
         <option value="$PROJECT_DIR$/app/Prayerrequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PrayerresponseController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/Prayerrequest/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PrayerrequestController.php" />
         <option value="$PROJECT_DIR$/resources/views/Prayerrequest/show.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/front.blade.php" />
       </list>
     </option>
   </component>
@@ -301,6 +303,17 @@
             <path>
               <item name="prayerJournal" type="b2602c69:ProjectViewProjectNode" />
               <item name="prayerJournal" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prayerJournal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prayerJournal" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prayerJournal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prayerJournal" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -322,13 +335,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prayerJournal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prayerJournal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Prayerrequest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prayerJournal" type="b2602c69:ProjectViewProjectNode" />
@@ -382,12 +388,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561269257828</updated>
-      <workItem from="1561269261356" duration="78574000" />
+      <workItem from="1561269261356" duration="85465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78574000" />
+    <option name="totallyTimeSpent" value="85465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -671,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="82" column="43" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_23_221054_change_content_column.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -739,14 +738,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/Prayerrequest/new.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-543">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Prayerrequest/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+          <caret line="19" column="49" selection-start-line="18" selection-start-column="32" selection-end-line="20" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -757,17 +749,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="22" column="92" selection-start-line="22" selection-start-column="92" selection-end-line="22" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrayerrequestController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
@@ -783,6 +768,37 @@
             <element signature="e#1445#1467#0#HTML" expanded="true" />
             <element signature="e#1649#1675#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Prayerrequest/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@
 
 
 Auth::routes();
-Route::get('/', 'HomeController@index')->name('home');
+Route::view('/', 'front')->name('front');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/request', 'PrayerrequestController@index')->name('request.index');
 Route::get('/request/new', 'PrayerrequestController@new');

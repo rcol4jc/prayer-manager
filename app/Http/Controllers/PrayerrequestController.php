@@ -151,5 +151,11 @@ class PrayerrequestController extends Controller
 
     public function showPartners($id){
 
+    
+
+        $prayerpartners = Prayerpartner::where('prayerrequest_id',$id);
+
+        return view('Prayerrequest.partners', ['prayerpartners'=>$prayerpartners]);
+
     }
 }
