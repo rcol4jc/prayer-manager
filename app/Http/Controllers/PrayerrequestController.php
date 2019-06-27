@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Prayerrequest;
 use App\Prayerpartner;
+use App\User;
 
 class PrayerrequestController extends Controller
 {
@@ -151,11 +152,12 @@ class PrayerrequestController extends Controller
 
     public function showPartners($id){
 
-    
 
-        $prayerpartners = Prayerpartner::where('prayerrequest_id',$id);
 
-        return view('Prayerrequest.partners', ['prayerpartners'=>$prayerpartners]);
+        $prayerrequest = Prayerrequest::find($id);
+        $users = User::all();
+
+        return view('Prayerrequest.partners', ['prayerrequest'=>$prayerrequest, 'users'=>$users]);
 
     }
 }

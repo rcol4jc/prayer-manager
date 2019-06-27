@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function prayerresponses(){
         return $this->hasMany('App\Prayerresponse');
     }
+
+    public function prayerpartners(){
+        return $this->hasMany('App\Prayerpartners');
+    }
 }
