@@ -16,8 +16,10 @@ class PrayerrequestController extends Controller
 
     public function index(){
 
-        $prayerrequests = Prayerrequest::where('user_id',Auth::id())->where('private',false);
+        $prayerrequests = Prayerrequest::all();
         $user= Auth::user();
+
+
 
         return view('Prayerrequest.index', ['prayerrequests'=>$prayerrequests, 'user'=>$user]);
     }
@@ -123,13 +125,16 @@ class PrayerrequestController extends Controller
         $user=Auth::user();
 
         $prayerrequest=Prayerrequest::find($id);
+        $col_count=6;
 
         $prayerrequest->prayerresponses()->where('private', 0)->orWhere('user_id',$user->id)->get();
-
+        if ($prayerrequest->user_id == $user->id){
+            $col_count=4;
+        }
         if ($user->id == $prayerrequest->user_id || (!$prayerrequest->private)){
             $prayerrequest->load('prayerresponses');
 
-            return view('Prayerrequest.show', ['prayerrequest'=>$prayerrequest,'user'=>$user]);
+            return view('Prayerrequest.show', ['prayerrequest'=>$prayerrequest,'user'=>$user, 'col_count'=>$col_count]);
         } else {
             return redirect()->route('request.index');
         }
