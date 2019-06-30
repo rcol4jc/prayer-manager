@@ -63,7 +63,7 @@
             <div class="card mt-5">
                 <div class="card-header"><h4>Add a response</h4></div>
                 <div class="card-body">
-                    <form action="{{route('response.save', $prayerrequest->id)}}" class="form" method="post">
+                    <form action="{{route('response.new.save', $prayerrequest->id)}}" class="form" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="details">Response: </label>

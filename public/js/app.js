@@ -77408,6 +77408,13 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+delete_response_button = document.querySelector('#delete_response').addEventListener('click', function (e) {
+  yesToDelete = confirm('Are Your sure you want to Delete? \n If yes, click Ok');
+
+  if (!yesToDelete) {
+    e.preventDefault();
+  }
+});
 
 /***/ }),
 

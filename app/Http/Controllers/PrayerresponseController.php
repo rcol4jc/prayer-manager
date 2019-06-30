@@ -15,6 +15,19 @@ class PrayerresponseController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(){
+
+        $user=Auth::user();
+
+        $allResponses = Prayerresponse::all();
+        $myResponses=$allResponses->where('user_id','=',$user->id);
+
+
+        return view('Prayerresponse.index', ['myResponses'=>$myResponses,'user'=>$user]);
+
+
+    }
+
     public function save(Request $request, $id){
         //validate first
         $this->validate($request, [
@@ -37,7 +50,40 @@ class PrayerresponseController extends Controller
 
         return redirect()->route('request.show', $id);
 
+    }
 
+
+    public function edit($id){
+
+        $prayerresponse=Prayerresponse::find($id);
+
+        $user=Auth::user();
+
+        if ($prayerresponse->user_id == $user->id){
+            return view('Prayerresponse.edit',['prayerresponse'=> $prayerresponse]);
+        } else {
+            return redirect()->route('home');
+        }
+
+    }
+
+    public function change(Request $request, $id){
+
+        $this->validate($request, [
+            'details'=>'required'
+        ]);
+
+        $prayerresponse = Prayerresponse::find($id);
+
+        $prayerresponse->details=$request->details;
+
+        $prayerresponse->save();
+
+        return redirect()->route('response.index');
+    }
+
+    public function delete(Request $request, $id){
+        echo 'here';
 
     }
 }
