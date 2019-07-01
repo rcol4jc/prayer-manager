@@ -61,11 +61,19 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="requestDropdown">
-                                    <a class="dropdown-item" href="#">Add Request</a>
-                                    <a class="dropdown-item" href="#">View My Requests</a>
-                                    <a class="dropdown-item" href="#">View Public Requests</a>
+                                    <a class="dropdown-item" href="{{route('request.new')}}">Add Request</a>
+                                    <a class="dropdown-item" href="{{ route('request.index') }}">View My Requests</a>
                                 </div>
                             </li>
+                            <li class="nav-item dropdown">
+                                    <a id="responseDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Prayer Responses<span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="responseDropdown">
+                                        <a class="dropdown-item" href="{{ route('response.index') }}">View My Responses</a>
+                                    </div>
+                                </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

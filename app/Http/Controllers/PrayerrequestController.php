@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Prayerrequest;
 use App\Prayerpartner;
+use App\Prayerresponse;
 use App\User;
 
 class PrayerrequestController extends Controller
@@ -167,6 +168,24 @@ class PrayerrequestController extends Controller
         $users = User::all();
 
         return view('Prayerrequest.partners', ['prayerrequest'=>$prayerrequest, 'users'=>$users]);
+
+    }
+
+    public function delete($id){
+
+        $prayerrequest = Prayerrequest::findOrFail($id);
+
+        $deletedResponses = Prayerresponse::where('prayerrequest_id',$id)->delete();
+
+        $deletedPartners = Prayerpartner::where('Prayerrequest_id', $id)->delete();
+
+        $prayerrequest->destroy($id);
+
+        return redirect()->route('request.index');
+
+
+
+
 
     }
 }

@@ -14,7 +14,29 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <h3>My Requests:</h3>
+                    <ol>
+                        @foreach ($myRequests as $item)
+                    <li><a href="{{ route('request.show', $item->id)}}">{{$item->title}}</a></li>
+                        @endforeach
+                    </ol>
+
+                    <h3>Public Requests</h3>
+                    <ol>
+                        @foreach ($publicRequests as $item)
+                        <li><a href="{{ route('request.show', $item->id)}}">{{$item->title}}</a></li>
+                        @endforeach
+                    </ol>
+
+                    <h3>My Responses</h3>
+
+                    <ol>
+                        @foreach ($myResponses as $item)
+                    <li><a href="{{route('request.show', $item->prayerrequest->id)}}">{{$item->details}}</a></li>
+                        @endforeach
+                    </ol>
+
+
                 </div>
             </div>
         </div>

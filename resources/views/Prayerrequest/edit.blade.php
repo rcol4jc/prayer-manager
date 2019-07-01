@@ -81,6 +81,19 @@
                         </form>
                     </div>
                 </div>
+
+                <div class="card mt-5 text-white bg-warning">
+                    <div class="card-header bg-danger">
+                        Delete This request
+                    </div>
+                    <div class="card-body">
+                    <form action="{{route('request.delete', $prayerrequest->id)}}" method="POST">
+                        @csrf
+                        <input type="hidden" name="_method" value="delete"/>
+                        <input type="submit" class="btn btn-danger" id="request_delete" value="Delete Request"/>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

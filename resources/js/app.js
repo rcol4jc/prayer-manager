@@ -34,13 +34,29 @@ const app = new Vue({
     el: '#app'
 });
 
-delete_response_button = document
-    .querySelector('#delete_response')
-    .addEventListener('click', function(e) {
-        yesToDelete = confirm(
-            'Are Your sure you want to Delete? \n If yes, click Ok'
-        );
-        if (!yesToDelete) {
-            e.preventDefault();
-        }
-    });
+if (document.querySelector('#request_delete')) {
+    document
+        .querySelector('#request_delete')
+        .addEventListener('click', function(e) {
+            let yesToDelete = confirm(
+                'Are Your sure you want to Delete? \n If yes, click Ok'
+            );
+
+            if (!yesToDelete) {
+                e.preventDefault();
+            }
+        });
+}
+
+if (document.querySelector('#delete_response')) {
+    document
+        .querySelector('#delete_response')
+        .addEventListener('click', function(e) {
+            yesToDelete = confirm(
+                'Are Your sure you want to Delete? \n If yes, click Ok'
+            );
+            if (!yesToDelete) {
+                e.preventDefault();
+            }
+        });
+}

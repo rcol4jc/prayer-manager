@@ -83,7 +83,16 @@ class PrayerresponseController extends Controller
     }
 
     public function delete(Request $request, $id){
-        echo 'here';
+        $user=Auth::user();
 
+        $prayerresponse = Prayerresponse::find($id);
+
+        if ($prayerresponse->user_id == $user->id){
+
+            $prayerresponse->destroy($id);
+            return redirect()->route('response.index');
+        } else {
+            return redirect()->route('response.index');
+        }
     }
 }
