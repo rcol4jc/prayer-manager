@@ -37,3 +37,17 @@ source and you may clone it and modify to your heart's content
 11. Type 'php artisan migrate' to set up the tables in the database.
 12. Type 'php artisan serve' to start the development. Browse to http://localhost:8000 to see the running site
 13. Register as a new user and play around!
+
+## Demo live
+
+I have a demo of this up at:
+
+http://prayer-journal.rickcollins.info
+
+You have two users to chose from:
+
+Username: johndoe
+Password: Abcd1234@
+
+Username: janedoe
+Password: Abcd1234@
