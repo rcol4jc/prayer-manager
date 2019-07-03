@@ -20,6 +20,7 @@
                     <li><a href="{{ route('request.show', $item->id)}}">{{$item->title}}</a></li>
                         @endforeach
                     </ol>
+                        <a class="btn btn-primary" href="{{ route('request.new') }}">Add new Request</a>
 
                     <h3>Public Requests</h3>
                     <ol>
