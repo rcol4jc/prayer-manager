@@ -28,7 +28,7 @@ Route::delete('/request/{id}/delete', 'PrayerrequestController@delete')->name('r
 
 Route::get('/response', 'PrayerresponseController@index')->name('response.index');
 Route::get('/response/{id}/edit', 'PrayerresponseController@edit')->name('response.edit');
-Route::post('/response/{id}/save', 'PrayerresponseController@change')->name('response.save');
+Route::post('/response/{id}/change', 'PrayerresponseController@change')->name('response.save');
 Route::post('/response/{request_id}/save', 'PrayerresponseController@save')->name('response.new.save');
 Route::delete('/response/{id}/delete', 'PrayerresponseController@delete')->name('response.delete');
 
